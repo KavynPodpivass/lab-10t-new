@@ -1,5 +1,6 @@
 package ua.opnu;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class EasyTasks {
@@ -11,43 +12,52 @@ public class EasyTasks {
     }
 
     public List<Integer> doubling(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return nums.stream()
+                .map(number -> number * 2)
+                .toList();
     }
 
     public List<Integer> square(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return nums.stream()
+                .map(number -> number * number)
+                .toList();
     }
 
     public List<String> moreY(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return strings.stream()
+                .map(word -> "y" + word + "y")
+                .toList();
     }
 
     public List<Integer> noNeg(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return nums.stream()
+                .filter(number -> number >= 0)
+                .toList();
     }
 
     public List<Integer> no9(List<Integer> nums) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return nums.stream()
+                .filter(number -> number % 10 != 9)
+                .toList();
     }
 
     public List<String> noZ(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return strings.stream()
+                .filter(word -> !word.contains("z"))
+                .toList();
     }
 
     public List<String> refinedStrings(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return strings.stream()
+                .distinct()
+                .sorted((a, b) -> Integer.compare(b.length(), a.length()))
+            .toList();
     }
-
     public List<String> flatten(List<String> strings) {
-        // TODO: напишіть вміст методу згідно умовам для того, щоб пройти тести
-        return null;
+        return strings.stream()
+                .flatMap(name -> Arrays.stream(name.split(" ")))
+                .toList();
+
     }
 
 }
